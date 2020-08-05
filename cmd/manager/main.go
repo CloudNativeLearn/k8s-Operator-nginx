@@ -93,6 +93,7 @@ func main() {
 	}
 
 	// Set default manager options
+	// 限制监听的名称空间
 	options := manager.Options{
 		Namespace:          namespace,
 		MetricsBindAddress: fmt.Sprintf("%s:%d", metricsHost, metricsPort),
@@ -108,6 +109,7 @@ func main() {
 	}
 
 	// Create a new manager to provide shared dependencies and start components
+	//  限制监听的名称空间 options 字段表示命名空间
 	mgr, err := manager.New(cfg, options)
 	if err != nil {
 		log.Error(err, "")

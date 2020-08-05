@@ -21,6 +21,7 @@ spec:
           - opdemo
           imagePullPolicy: Always
           env:
+#            WATCH_NAMESPACE字段为限制监听的namespace字段
             - name: WATCH_NAMESPACE
               valueFrom:
                 fieldRef:
